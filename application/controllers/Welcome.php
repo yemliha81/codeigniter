@@ -7,7 +7,12 @@ class Welcome extends CI_Controller {
     
 	public function index()
 	{	
-		$this->load->view('home', $data);
+		$this->load->view('home'); //views/home.php dosyasını göstermeye yarar.
+	}
+
+	public function about()
+	{	
+		$this->load->view('about');
 	}
 	
 }
