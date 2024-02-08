@@ -28,11 +28,16 @@ class Products extends CI_Controller {
 
 		$post = $this->input->post();
 
+		//debug($post);
+
         $insert_array = [];
 
         //Validasyon eklenebilir
         $insert_array['product_name'] = $post['product_name'];
         $insert_array['product_volume'] = $post['product_volume'];
+        $insert_array['data_text'] = json_encode($post['data']);
+
+		//debug($insert_array);
 
         foreach($_FILES as $key => $file){
             $file = $_FILES[$key];

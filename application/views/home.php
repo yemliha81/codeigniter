@@ -6,6 +6,6 @@
     <title>Anasayfa</title>
 </head>
 <body>
-    Merhaba Codeigniter HTML dosya
+    Anasayfa
 </body>
 </html>
