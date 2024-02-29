@@ -96,3 +96,4 @@ define( 'SIGNUP_POST', $_ENV['BASE_URL'].'login/signup_post/' );
 define( 'PRODUCTS_PAGE', $_ENV['BASE_URL'].'products/create_product/' );
 define( 'NEW_PRODUCT', $_ENV['BASE_URL'].'products/new_product/' );
 define( 'PRODUCT_SAVE', $_ENV['BASE_URL'].'products/save/' );
+define( 'PRODUCT_LIST', $_ENV['BASE_URL'].'products/product_list/' );

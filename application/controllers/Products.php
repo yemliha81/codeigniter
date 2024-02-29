@@ -93,5 +93,46 @@ class Products extends CI_Controller {
 		  die();
 		}
 	}
+
+	public function product_list(){
+		$data['products'] = $this->db->select('*')
+			->limit(10)
+			->get('products')->result_array();
+		
+		$this->load->view('product_list', $data);
+	}
+
+	public function product_detail($id){
+		
+		$data['categories'] = $this->db->select('*')
+			->where('parent_id', 0)
+			->get('categories')->result_array();
+		
+		$data['product'] = $this->db->select('*')
+			->where('id',$id)
+			->get('products')->row_array();
+		
+		$this->load->view('product_detail', $data);
+	}
+
+	public function update_product(){
+		$post = $this->input->post();
+		//debug($post);
+
+		$insert_array['cat_id'] = $post['cat_id'];
+		$insert_array['product_name'] = $post['product_name'];
+		$insert_array['product_volume'] = $post['product_volume'];
+
+		$where['id'] = $post['product_id'];
+
+		$this->db->update('products', $insert_array, $where);
+
+		if($this->db->affected_rows() > 0){
+			redirect(PRODUCT_LIST);
+		}else{
+			die('Error');
+		}
+
+	}
 	
 }
