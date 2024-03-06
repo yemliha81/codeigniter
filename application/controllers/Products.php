@@ -134,5 +134,23 @@ class Products extends CI_Controller {
 		}
 
 	}
+
+	public function get_sub_cats(){
+		$post = $this->input->post();
+
+		//debug($post);
+
+		$sub_cats = $this->db->select('*')
+			->where('parent_id', $post['cat_id'])
+			->get('categories')->result_array();
+		
+		//debug($sub_cats);
+		if(!empty($sub_cats)){
+			echo json_encode($sub_cats);
+		}else{
+			echo 'no_sub_cats';
+		}
+
+	}
 	
 }

@@ -97,3 +97,4 @@ define( 'PRODUCTS_PAGE', $_ENV['BASE_URL'].'products/create_product/' );
 define( 'NEW_PRODUCT', $_ENV['BASE_URL'].'products/new_product/' );
 define( 'PRODUCT_SAVE', $_ENV['BASE_URL'].'products/save/' );
 define( 'PRODUCT_LIST', $_ENV['BASE_URL'].'products/product_list/' );
+define( 'GET_SUB_CATS', $_ENV['BASE_URL'].'products/get_sub_cats/' );
